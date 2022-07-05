@@ -1,0 +1,142 @@
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package calculadorabasica;
+
+import javax.swing.JOptionPane;
+import java.lang.Math;
+import java.util.*;
+
+/**
+ *
+ * @author Tatiana Jamauca
+ */
+public class calculadora 
+{
+   // TODO code application logic here
+    private String pregunta;
+    private String opcion1; 
+    private  String opcion2;
+    private String opcion3;
+    
+    
+   private String numero1;
+   private String numero2;
+   private  double resultado=0;
+   
+   
+   
+   
+   
+        
+    public void leerOpcion()
+    {
+        pregunta = JOptionPane.showInputDialog(null,"Seleccione una opcion \n 1. Realizar una operacion \n  2. salir","Menu principal", JOptionPane.QUESTION_MESSAGE);
+        menu();
+        
+        
+    } 
+    
+   
+    /**
+     *
+     */
+    public void menu()
+    {
+        
+        
+        if (Integer.parseInt(pregunta)== 1)
+        {
+            
+          opcion1 = JOptionPane.showInputDialog(null,"Seleccione una operacion \n 1. Suma \n  2. Resta \n 3. Multiplicacion \n 4. Division \n 5. Potencia \n 6. Raiz cuadrada \n 7. Salir ","Menu principal", JOptionPane.QUESTION_MESSAGE);
+          
+          operaciones();
+        }
+        else 
+        {
+        System.exit(0);  
+        
+        
+        }
+        
+        
+    }
+    
+    
+    public void operaciones()
+    {
+        if (Integer.parseInt(opcion1)== 1)
+        {
+          numero1 = JOptionPane.showInputDialog(null,"Ingrese el primer numero", JOptionPane.QUESTION_MESSAGE);
+          numero2 = JOptionPane.showInputDialog(null,"Ingrese el segundo numero", JOptionPane.QUESTION_MESSAGE);
+          
+          double suma  = Integer.parseInt(numero1) + Integer.parseInt(numero2);
+          JOptionPane.showMessageDialog(null, "La suma es: "+ suma);
+          
+        
+        }
+        
+        else if (Integer.parseInt(opcion1)== 2)
+        {
+          numero1 = JOptionPane.showInputDialog(null,"Ingrese el primer numero", JOptionPane.QUESTION_MESSAGE);
+          numero2 = JOptionPane.showInputDialog(null,"Ingrese el segundo numero", JOptionPane.QUESTION_MESSAGE);
+          
+          double resta  = Integer.parseInt(numero1)-Integer.parseInt(numero2);
+          JOptionPane.showMessageDialog(null, "La resta es: "+ resta);  
+        }
+        
+        else if (Integer.parseInt(opcion1)== 3)
+        {
+          numero1 = JOptionPane.showInputDialog(null,"Ingrese el primer numero", JOptionPane.QUESTION_MESSAGE);
+          numero2 = JOptionPane.showInputDialog(null,"Ingrese el segundo numero", JOptionPane.QUESTION_MESSAGE);
+          
+          resultado = Integer.parseInt(numero1)*Integer.parseInt(numero2);
+          JOptionPane.showMessageDialog(null, "La multiplicacion es: "+ resultado);  
+        }
+        
+        else if (Integer.parseInt(opcion1)== 4)
+        {
+          numero1 = JOptionPane.showInputDialog(null,"Ingrese el primer numero", JOptionPane.QUESTION_MESSAGE);
+          numero2 = JOptionPane.showInputDialog(null,"Ingrese el segundo numero", JOptionPane.QUESTION_MESSAGE);
+          
+          resultado = Integer.parseInt(numero1)/Integer.parseInt(numero2);
+          JOptionPane.showMessageDialog(null, "La division es: "+ resultado);  
+        }
+        
+        else if (Integer.parseInt(opcion1)== 5)
+        {
+          numero1 = JOptionPane.showInputDialog(null,"Ingrese el primer numero", JOptionPane.QUESTION_MESSAGE);
+          numero2 = JOptionPane.showInputDialog(null,"Ingrese el segundo numero", JOptionPane.QUESTION_MESSAGE);
+          
+          
+          double num1= Integer.parseInt(numero1);
+          double num2 = Integer.parseInt(numero2);
+          resultado = Math.pow(num1,num2);
+          JOptionPane.showMessageDialog(null, "La potencia  es: "+ resultado);  
+        }
+        
+         else if (Integer.parseInt(opcion1)== 6)
+        {
+          numero1 = JOptionPane.showInputDialog(null,"Ingrese el  numero", JOptionPane.QUESTION_MESSAGE);
+          //numero1 = JOptionPane.showInputDialog(null,"Ingrese el segundo numero", JOptionPane.QUESTION_MESSAGE);
+          
+          resultado = Math.sqrt(Integer.parseInt(numero2));
+          JOptionPane.showMessageDialog(null, "La raiz cuadrada  es: "+ resultado);  
+        }
+        
+        else if (Integer.parseInt(opcion1)== 7)
+        {
+          System.exit(0);    
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+}
